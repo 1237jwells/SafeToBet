@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SafeToBet.SignUpForm">            
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Clicked="Back_Click" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White" Margin="20,40,20,10">
+                <Label Text="Register For SafeToBet!" Margin="25" FontSize="40" HorizontalOptions="CenterAndExpand" XAlign="Center"/>
+                <Label Text="Username" />
+                <Entry x:Name="entryUsername" Text="" Placeholder="Enter Username" Margin="10" />
+                <Label Text="Phone Number" />
+                <Entry x:Name="entryPhoneNumber" Text="" Placeholder="Enter Phone Number" Margin="10" />
+                <Label Text="E-Mail" />
+                <Entry x:Name="entryEmail"  Text=""  Placeholder="Enter Email" Margin="10"/>
+                <Label Text="Password" />
+                <Entry x:Name="entryPassword" IsPassword="true" Text="" Placeholder="Enter Password" Margin="10"/>
+                <Label Text="Confirm Password" />
+                <Entry x:Name="entryConfirmPassword"  Text="" IsPassword="true" Placeholder="Re-Enter Password" Margin="10,10,10,20" />
+                <Button Text="Back" FontAttributes="Bold" Clicked="Back_Click" TextColor="#006600"/>
+                <Button Text="Sign Up" FontAttributes="Bold" Clicked="SignupClick" TextColor="#006600"/>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

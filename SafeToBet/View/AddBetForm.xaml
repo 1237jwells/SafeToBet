@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SafeToBet.View.AddBetForm" >
+
+        
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="Save_Click" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+            <ScrollView>
+          <StackLayout Spacing="15" Padding="15" >                      
+            <Label Text="New Bet" HorizontalOptions="CenterAndExpand" FontSize="25" />
+            <Label Text="Name of Bet" FontSize="Medium" />
+            <Entry x:Name="entryBetName" FontSize="Medium" />
+            <Label Text="Opponent" FontSize="Medium" />
+            <Entry x:Name="entryBetOpponent" FontSize="Medium" Keyboard="Numeric" />           
+            <Label Text="Set Date" FontSize="Medium" Margin="1" />
+            <DatePicker  Format="D"/>
+            <Label Text="End Date" FontSize="Medium" Margin="1" />
+            <DatePicker  Format="D"/>    
+            <Label Text="Type" FontSize="Medium" />
+            <Picker x:Name="picker" Title="Type of Bet" >
+                    
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    <x:String>Sports</x:String>
+                    <x:String>Food</x:String>
+                    <x:String>Politics</x:String>
+                    <x:String>Family</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                    
+            </Picker>
+            <Label Text="Description" FontSize="Medium"/>
+            <Editor x:Name="entryBetDescription" FontSize="Medium" Keyboard="Numeric" BackgroundColor="#dedede" AutoSize="TextChanges" HeightRequest="120"/>
+          <Label x:Name="Amount"/>
+            <Slider MaximumTrackColor="Gray" MinimumTrackColor="Green" Minimum="0" Maximum="100" Value="10" ValueChanged="Handle_ValueChanged"/>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  x:Class="SafeToBet.DetailForm" 
+                  xmlns:local="clr-namespace:SafeToBet;Assembly=SafeToBet"                
+                  MasterBehavior="Popover"
+
+
+                   >
+    <MasterDetailPage.Master>
+        <ContentPage Title="SafeToBet Menu" >
+            <ContentPage.Content>
+                <StackLayout Orientation="Vertical" Padding="10" >
+                    <Label Text="" x:Name="labelUsername"  FontSize="15" HorizontalTextAlignment="Center" Margin="10,10,10,25"/>
+                    <Label Text="SafeToBet Guide" FontSize="23" Margin="10,10,10,10" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Home" FontAttributes="Bold" Margin="10,10,10,10" Clicked="openHome" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                    <Button Text="New Bet" FontAttributes="Bold" Margin="10,10,10,10" Clicked="openNewBet" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                    <Button Text="About us" FontAttributes="Bold" Margin="10,10,10,10"  Clicked="openAboutUs" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                    <Label Text="Settings" FontSize="23" Margin="10,10,10,10" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Change Password" FontAttributes="Bold" Margin="10,10,10,10"  Clicked="openChangePassword" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                    <Button Text="Logout" FontAttributes="Bold"  Margin="10,10,10,10" Clicked="openLogout" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                    <Button Text="Delete Account" FontAttributes="Bold"  Margin="10,10,10,10" Clicked="deleteAccount" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
+
+
+    <!--
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <StackLayout Orientation="Vertical" BackgroundColor="Red">
+                    <Label Text="Welcome To your SafeToBet account!"  XAlign="Center"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+    -->

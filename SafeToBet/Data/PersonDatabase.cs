@@ -26,7 +26,7 @@ namespace SafeToBet.Data
             if (!isUserExists(mDatabaseModel.personUsername))
             {
                 var data = database.InsertAsync(mDatabaseModel).Result;
-                //Debug.WriteLine("SaveDataIntoDatabase >> " + data.ToString());
+                Debug.WriteLine("SaveDataIntoDatabase >> " + data.ToString());
                 return 1;
             }
             else
@@ -108,7 +108,8 @@ namespace SafeToBet.Data
         //GET USER DATA
         public Task<DatabaseModel> getUserData(String strUsername)
         {
-            return database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername)).FirstOrDefaultAsync();
+            return database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+                                                        .FirstOrDefaultAsync();
         }
     }
 }

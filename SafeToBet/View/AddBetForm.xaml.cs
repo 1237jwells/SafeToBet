@@ -9,7 +9,7 @@ namespace SafeToBet.View
 {
     public partial class AddBetForm : ContentPage
     {
-        BetList viewModel;
+        //BetList viewModel;
         //Strings start at nothing
         String strBetName = "";
         //String strBetDate = "";
@@ -52,8 +52,8 @@ namespace SafeToBet.View
             mBetList.BetDescription = strBetDescription;
             mBetList.BetOpponent = strBetOpponent;
             //Saves as a new Databse Result
-            int intSaveBetResult = App.DatabaseBet.SaveBetIntoDatabase(mBetList);
-            openActionDialog(intSaveBetResult);
+            //int intSaveBetResult = App.DatabaseBet.SaveBetIntoDatabase(mBetList);
+            //openActionDialog(intSaveBetResult);
         }
 
         async private void openActionDialog(int intResult)

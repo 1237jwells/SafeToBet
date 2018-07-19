@@ -12,12 +12,6 @@ namespace SafeToBet
     {
         String strLoginStatus;
         String strUsername;
-        //String strEmail;
-
-        private void changeNavigationPage(ContentPage contentPage)
-        {
-            Detail = new NavigationPage(contentPage);
-        }
 
         public DetailForm()
         {
@@ -32,7 +26,9 @@ namespace SafeToBet
             else
             {
                 DatabaseModel mDatabaseModel = App.Database.getUserData(SharedPreference.GetUsername).Result;
-                strUsername = SharedPreference.GetUsername;
+                strUsername = mDatabaseModel.personUsername;
+
+                //strUsername = SharedPreference.GetUsername;
                 labelUsername.Text = "Welcome, " + strUsername;
                 changeNavigationPage(new HomeForm());
             }
@@ -67,11 +63,11 @@ namespace SafeToBet
                 return;
             }
         }
+
+
         protected async void deleteAccount(object sender, EventArgs e)
         {
             DatabaseModel mDatabaseModel = new DatabaseModel();
-
-            //mDatabaseModel.personEmail = strEmail;
             mDatabaseModel.personUsername = strUsername;
 
 
@@ -87,5 +83,11 @@ namespace SafeToBet
                 return;
             }
         }
+
+        private void changeNavigationPage(ContentPage contentPage)
+        {
+            Detail = new NavigationPage(contentPage);
+        }
+
     }
 }

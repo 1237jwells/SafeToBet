@@ -9,21 +9,15 @@ namespace SafeToBet
     public partial class SignUpForm : ContentPage
     {
         //Strings start at nothing
-        String strUsername = "";
-        String strEmail = "";
-        String strPassword = "";
-        String strConfirmPassword = "";
-        String strPhoneNumber = "";
+        String strUsername = "", strEmail = "", strPassword = "",
+        strConfirmPassword = "", strPhoneNumber = "";
 
         public SignUpForm()
         {
             InitializeComponent();
         }
-        void Back_Click(object sender, EventArgs e)
-        {
-             Navigation.PopModalAsync();
-        }
-        async void SignupClick(object sender, EventArgs e)
+
+        async void SignupClick(object sender, System.EventArgs e)
         {
             //Xaml text entryName.Text is now == string
             strUsername = entryUsername.Text;
@@ -117,6 +111,11 @@ namespace SafeToBet
                 return false;
             }
             return true;
+        }
+
+        void Back_Click(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
     }
 }

@@ -3,16 +3,14 @@ using SafeToBet.Classes;
 using Xamarin.Forms;
 using SafeToBet.ViewModel;
 using SafeToBet.Data;
+using System.Diagnostics;
 
 namespace SafeToBet
 {
     public partial class LoginForm : ContentPage
     {
 
-        String strUsername = "";
-        String strEmail = "";
-        String strPassword = "";
-        String strPhoneNumber = "";
+        String strUsername = "", strPassword = "";
 
 
         public LoginForm()
@@ -25,6 +23,10 @@ namespace SafeToBet
         {
             foreach (var item in await App.Database.GetPersonListing())
             {
+                Debug.WriteLine("strId >> " + item.id);
+                Debug.WriteLine("strId >> " + item.personPhoneNumber);
+                Debug.WriteLine("strId >> " + item.personUsername);
+                Debug.WriteLine("strId >> " + item.personPassword);
             }
         }
         void Login_Clicked(object sender, System.EventArgs e)
@@ -32,6 +34,7 @@ namespace SafeToBet
             //strPhoneNumber = entryPhoneNumber.Text;
             strUsername = entryUsername.Text;
             strPassword = entryPassword.Text;
+
             if (isDataValidate())
             {
                 performAction(App.Database.isUserAuthenticated(strUsername, strPassword));
@@ -41,20 +44,18 @@ namespace SafeToBet
         {
             if (result)
             {
-                DatabaseModel mDatabaseModel = new DatabaseModel();
-
-
+                //DatabaseModel mDatabaseModel = new DatabaseModel();
                 //await DisplayAlert(Constant.APP_NAME, Constant.LOGIN_SUCCESS, null, "OK");
                 //SharedPreference.GetPhoneNumber = strPhoneNumber;
-                strPhoneNumber = mDatabaseModel.personPhoneNumber;
-                strEmail = mDatabaseModel.personEmail;
+                //strPhoneNumber = mDatabaseModel.personPhoneNumber;
+                //strEmail = mDatabaseModel.personEmail;
 
 
                 SharedPreference.GetLoginStatus = "true";
                 SharedPreference.GetUsername = strUsername;
                 SharedPreference.GetPassword = strPassword;
-                SharedPreference.GetPhoneNumber = strPhoneNumber;
-                SharedPreference.GetEmailAddress = strEmail;
+                //SharedPreference.GetPhoneNumber = strPhoneNumber;
+                //SharedPreference.GetEmailAddress = strEmail;
                 await Navigation.PopModalAsync();
             }
             else

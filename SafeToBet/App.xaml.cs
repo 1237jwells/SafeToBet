@@ -18,7 +18,7 @@ namespace SafeToBet
             InitializeComponent();
             Instance = this;
             //MainPage = new NavigationPage(new DetailForm());
-            MainPage = new NavigationPage(new LoginForm());
+            MainPage = new NavigationPage(new DetailForm());
 
         }
 

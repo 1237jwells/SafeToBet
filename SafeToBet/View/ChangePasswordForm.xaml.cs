@@ -18,13 +18,11 @@ namespace SafeToBet
         public ChangePasswordForm()
         {
             InitializeComponent();
-            strStatus = SharedPreference.GetLoginStatus;
             strUsername = SharedPreference.GetUsername;
             strOldPassword = SharedPreference.GetPassword;
             strEmail = SharedPreference.GetEmailAddress;
             strPhoneNumber = SharedPreference.GetPhoneNumber;
 
-            labelLoginStatus.Text = "Login Status: " + strStatus;
             labelUsername.Text = "Username: " + strUsername;
             labelPassword.Text = "Password: " + strOldPassword;
             labelEmail.Text = "Email: " + strEmail;

@@ -34,12 +34,7 @@ namespace SafeToBet.Data
                 return 0;
             }
         }
-        //This functio will delete account from database
-        public Task<int> deleteAccount(DatabaseModel mDatabaseModel)
-        {
-            return database.DeleteAsync(mDatabaseModel);
 
-        }
         //This function will UPDATE data into database.
         public Task<int> UpdateDataIntoDatabase(DatabaseModel mDatabaseModel)
         {
@@ -85,7 +80,22 @@ namespace SafeToBet.Data
             }
             return isExists;
         }
+        //This functio will delete account from database
+        public Task<int> deleteAccount(string strUsername)
+        {
+            var mData = database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+                                .FirstOrDefaultAsync().Result;
 
+            DatabaseModel mDatabaseModel = new DatabaseModel();
+            mDatabaseModel.id = mData.id;
+            mDatabaseModel.personEmail = mData.personEmail;
+            mDatabaseModel.personPassword = mData.personPassword;
+            mDatabaseModel.personUsername = mData.personUsername;
+            mDatabaseModel.personPhoneNumber = mData.personPhoneNumber;
+
+            return database.DeleteAsync(mDatabaseModel);
+
+        }
         //This function will UPDATE THE EMAIL of your account
         public Boolean updateEmail(string strUsername, string strEmail)
         {

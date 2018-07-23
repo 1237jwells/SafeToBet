@@ -30,7 +30,7 @@ namespace SafeToBet
                 //strUsername = mDatabaseModel.personUsername;
 
                 //strUsername = SharedPreference.GetUsername;
-                labelUsername.Text = "Welcome, " + strUsername;
+                labelUsername.Text = "Welcome, " + SharedPreference.GetUsername.ToString();
                 changeNavigationPage(new HomeForm());
             }
         }
@@ -79,15 +79,14 @@ namespace SafeToBet
 
         protected async void deleteAccount(object sender, EventArgs e)
         {
-            DatabaseModel mDatabaseModel = new DatabaseModel();
-            mDatabaseModel.personUsername = strUsername;
-
 
             var result = await DisplayAlert(Constant.APP_NAME, Constant.DELETE_ACCOUNT, Constant.YES, Constant.NO);
 
             if (result == true)
             {
-                int data = await App.Database.deleteAccount(mDatabaseModel);
+                //int data = await 
+                strUsername = SharedPreference.GetUsername;
+                await App.Database.deleteAccount(strUsername);
                 await Navigation.PushModalAsync(new LoginForm());
             }
             else

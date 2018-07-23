@@ -17,17 +17,15 @@ namespace SafeToBet.View
         public EditProfilePage()
         {
             InitializeComponent();
-            strStatus = SharedPreference.GetLoginStatus;
             strUsername = SharedPreference.GetUsername;
             strOldPassword = SharedPreference.GetPassword;
             strEmail = SharedPreference.GetEmailAddress;
             strPhoneNumber = SharedPreference.GetPhoneNumber;
 
-            labelLoginStatus.Text = "Login Status: " + strStatus;
             labelUsername.Text = "Username: " + strUsername;
             labelPassword.Text = "Password: " + strOldPassword;
             labelEmail.Text = "Email: " + strEmail;
-            labelPhoneNumber.Text = "PhoneNumber: " + strPhoneNumber;
+            labelPhoneNumber.Text = "Phone #: " + strPhoneNumber;
         }
         /// <summary>
         /// Change Email

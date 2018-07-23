@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using SafeToBet.Data;
 using SafeToBet.ViewModel;
 using SafeToBet.View;
+using System.Diagnostics;
 
 namespace SafeToBet
 {
@@ -25,14 +26,19 @@ namespace SafeToBet
             }
             else
             {
-                DatabaseModel mDatabaseModel = App.Database.getUserData(SharedPreference.GetUsername).Result;
-                strUsername = mDatabaseModel.personUsername;
+                //DatabaseModel mDatabaseModel = App.Database.getUserData(strUsername).Result;
+                //strUsername = mDatabaseModel.personUsername;
 
                 //strUsername = SharedPreference.GetUsername;
                 labelUsername.Text = "Welcome, " + strUsername;
                 changeNavigationPage(new HomeForm());
             }
         }
+
+
+
+
+
         void openHome(object sender, System.EventArgs e)
         {
             changeNavigationPage(new HomeForm());
@@ -40,6 +46,10 @@ namespace SafeToBet
         void openChangePassword(object sender, System.EventArgs e)
         {
             changeNavigationPage(new ChangePasswordForm());
+        }
+        void openChangeProfile(object sender, System.EventArgs e)
+        {
+            changeNavigationPage(new EditProfilePage());
         }
         void openAboutUs(object sender, System.EventArgs e)
         {
@@ -56,7 +66,9 @@ namespace SafeToBet
             if (result == true)
             {
                 SharedPreference.GetLoginStatus = "false";
+
                 await Navigation.PushModalAsync(new LoginForm());
+                DatabaseModel mDatabaseModel = new DatabaseModel();
             }
             else
             {

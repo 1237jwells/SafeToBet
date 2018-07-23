@@ -19,17 +19,17 @@
             <Label Text="End Date" FontSize="Medium" Margin="1" />
             <DatePicker  Format="D"/>    
             <Label Text="Type" FontSize="Medium" />
-            <Picker x:Name="picker" Title="Type of Bet" >
+            <Picker x:Name="entryBetType" Title="Type of Bet" ItemsSource="{Binding BetsList}}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedBet}" >
+<!--                    
+                <Picker.Items>
                     
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
                     <x:String>Sports</x:String>
                     <x:String>Food</x:String>
                     <x:String>Politics</x:String>
                     <x:String>Family</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-                    
+                   
+                </Picker.Items>
+-->                    
             </Picker>
             <Label Text="Description" FontSize="Medium"/>
             <Editor x:Name="entryBetDescription" FontSize="Medium" Keyboard="Numeric" BackgroundColor="#dedede" AutoSize="TextChanges" HeightRequest="120"/>

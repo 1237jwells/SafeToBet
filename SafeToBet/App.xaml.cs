@@ -17,8 +17,11 @@ namespace SafeToBet
         {
             InitializeComponent();
             Instance = this;
+
+            var Dets = new DetailForm();
+            var mainPage = new NavigationPage(Dets);
+            Application.Current.MainPage = mainPage;
             //MainPage = new NavigationPage(new DetailForm());
-            MainPage = new NavigationPage(new DetailForm());
 
         }
 
@@ -54,18 +57,18 @@ namespace SafeToBet
             }
         }
 
-        //public static BetList DatabaseBet
-        //{
-        //    get
-        //    {
+        public static BetList DatabaseBet
+        {
+            get
+            {
 
-        //        if (mBetList == null)
-        //        {
-        //            mBetList = new BetList(DependencyService.Get<iLocalFileHelper>().GetLocalFilePath("SafeToBet_Database.db3"));
-        //        }
-        //        return mBetList;
-        //    }
-        //}
+                if (mBetList == null)
+                {
+                    mBetList = new BetList(DependencyService.Get<iLocalFileHelper>().GetLocalFilePath("SafeToBet_Database.db3"));
+                }
+                return mBetList;
+            }
+        }
 
         public void GoToLoginScreen(ContentPage contentPage)
         {

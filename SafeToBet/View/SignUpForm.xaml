@@ -18,6 +18,7 @@
                 <Entry x:Name="entryConfirmPassword"  Text="" IsPassword="true" Placeholder="Re-Enter Password" Margin="10,10,10,20" />
                 <Button Text="Back" FontAttributes="Bold" Clicked="Back_Click" TextColor="#006600"/>
                 <Button Text="Sign Up" FontAttributes="Bold" Clicked="SignupClick" TextColor="#006600"/>
+            <Button Text=" COOL!"/>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

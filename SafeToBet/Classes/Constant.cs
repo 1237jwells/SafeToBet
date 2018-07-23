@@ -25,6 +25,8 @@ namespace SafeToBet.Classes
 
         //ValidationMessages
 
+        public static String GOOD_EMAIL = "Are you ok with your new E-Mail?";
+        public static String GOOD_PHONENUMBER = "Are you ok with your new Phone #?";
         public static String ENTER_EMAIL = "Please enter e-mail address";
         public static String ENTER_NAME = "Please enter Username";
         public static String ENTER_PHONE = "Please enter phone number";

@@ -23,10 +23,8 @@ namespace SafeToBet
         {
             foreach (var item in await App.Database.GetPersonListing())
             {
-                Debug.WriteLine("strId >> " + item.id);
-                Debug.WriteLine("strId >> " + item.personPhoneNumber);
-                Debug.WriteLine("strId >> " + item.personUsername);
-                Debug.WriteLine("strId >> " + item.personPassword);
+                //Debug.WriteLine("strId >> " + item.id);
+
             }
         }
         void Login_Clicked(object sender, System.EventArgs e)
@@ -54,8 +52,9 @@ namespace SafeToBet
                 SharedPreference.GetLoginStatus = "true";
                 SharedPreference.GetUsername = strUsername;
                 SharedPreference.GetPassword = strPassword;
-                //SharedPreference.GetPhoneNumber = strPhoneNumber;
-                //SharedPreference.GetEmailAddress = strEmail;
+                await App.Database.getUserData(strUsername);
+                //SharedPreference.GetPhoneNumber = 
+                //SharedPreference.GetEmailAddress = 
                 await Navigation.PopModalAsync();
             }
             else

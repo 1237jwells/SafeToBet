@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SafeToBet.View.EditProfilePage">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" >
+
+            <Label Text="Edit Profile" HorizontalOptions="CenterAndExpand" FontSize="25" Margin="10" />
+            <Label x:Name="labelLoginStatus" Text="" FontSize="15" Margin="10,20,1,1" HorizontalOptions="FillAndExpand" />
+            <Label x:Name="labelUsername" Text="" FontSize="15" Margin="10,1,1,1" HorizontalOptions="FillAndExpand" />
+            <Label x:Name="labelPassword" Text="" FontSize="15" Margin="10,1,1,1" HorizontalOptions="FillAndExpand" />
+             <Label x:Name="labelEmail" Text="" FontSize="15" Margin="10,1,1,1" HorizontalOptions="FillAndExpand" />
+            <Label x:Name="labelPhoneNumber" Text="" FontSize="15" Margin="10,1,1,20" HorizontalOptions="FillAndExpand" />          
+            <Entry Placeholder="Change Email" x:Name="entryEmail"  />
+            <Button x:Name="btnChangeEmail" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" Text="Change Email" Clicked="clickChangeEmail" FontAttributes="Bold" TextColor="#006600"/>
+            <Entry Placeholder="Change Phone #" x:Name="entryPhoneNumber"/> 
+            <Button x:Name="btnChangePhoneNumber" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" Text="Change Phone #" Clicked="clickChangePhoneNumber" FontAttributes="Bold" TextColor="#006600"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -13,7 +13,7 @@ namespace SafeToBet.View
         //Strings start at nothing
         String strBetName = "";
         //String strBetDate = "";
-        //String strBetType = "";
+        String strBetType = "";
         String strBetDescription = "";
         String strBetOpponent = "";
         //String strBetAmount = "";
@@ -24,7 +24,7 @@ namespace SafeToBet.View
             //Amount.Text = String.Format("Bet Amount: {0:C0}", e.NewValue);
             Amount.Text = "Bet Amount: $10";
             //BindingContext = ViewModel = new BetList();
-
+            BindingContext = new Pickers();
 
         }
 
@@ -40,7 +40,6 @@ namespace SafeToBet.View
             //Xaml text entryName.Text is now == string
             strBetName = entryBetName.Text;
             //strBetDate = entryBetDate.Text;
-            //strBetType = entryBetType.Text;
             strBetDescription = entryBetDescription.Text;
             strBetOpponent = entryBetOpponent.Text;
             //strBetConfirm = entryBetAmount.Text;
@@ -52,8 +51,8 @@ namespace SafeToBet.View
             mBetList.BetDescription = strBetDescription;
             mBetList.BetOpponent = strBetOpponent;
             //Saves as a new Databse Result
-            //int intSaveBetResult = App.DatabaseBet.SaveBetIntoDatabase(mBetList);
-            //openActionDialog(intSaveBetResult);
+            int intSaveBetResult = App.DatabaseBet.SaveBetIntoDatabase(mBetList);
+            openActionDialog(intSaveBetResult);
         }
 
         async private void openActionDialog(int intResult)

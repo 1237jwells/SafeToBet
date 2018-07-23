@@ -43,6 +43,7 @@ namespace SafeToBet.Data
         //This function will UPDATE data into database.
         public Task<int> UpdateDataIntoDatabase(DatabaseModel mDatabaseModel)
         {
+
             return database.UpdateAsync(mDatabaseModel);
         }
         //This function will FETCH ALL the person listing.
@@ -84,6 +85,50 @@ namespace SafeToBet.Data
             }
             return isExists;
         }
+
+        //This function will UPDATE THE EMAIL of your account
+        public Boolean updateEmail(string strUsername, string strEmail)
+        {
+            var mData = database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+                                            .FirstOrDefaultAsync().Result;
+            if (mData != null)
+            {
+                DatabaseModel mDatabaseModel = new DatabaseModel();
+                mDatabaseModel.id = mData.id;
+                mDatabaseModel.personEmail = strEmail;
+                mDatabaseModel.personPassword = mData.personPassword;
+                mDatabaseModel.personUsername = mData.personUsername;
+
+                database.UpdateAsync(mDatabaseModel);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //This function will UPDATE THE PHONENUMBER of your account
+        public Boolean updatePhoneNumber(string strUsername, string strPhoneNumber)
+        {
+            var mData = database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+                                            .FirstOrDefaultAsync().Result;
+            if (mData != null)
+            {
+                DatabaseModel mDatabaseModel = new DatabaseModel();
+                mDatabaseModel.id = mData.id;
+                mDatabaseModel.personEmail = mData.personEmail;
+                mDatabaseModel.personPassword = mData.personPassword;
+                mDatabaseModel.personUsername = mData.personUsername;
+                mDatabaseModel.personPhoneNumber = strPhoneNumber;
+
+                database.UpdateAsync(mDatabaseModel);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         //This function will UPDATE THE PASSWORD of your account
         public Boolean updatePassword(string strUsername, string strPassword)
         {
@@ -106,10 +151,25 @@ namespace SafeToBet.Data
             }
         }
         //GET USER DATA
-        public Task<DatabaseModel> getUserData(String strUsername)
+        //public Task<DatabaseModel> getUserData(String strUsername)
+        //{
+        //    return database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+        //                                                .FirstOrDefaultAsync();
+        //}
+        public Task<int> getUserData(String strUsername)
         {
-            return database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
-                                                        .FirstOrDefaultAsync();
+            var mData = database.Table<DatabaseModel>().Where(i => i.personUsername.Equals(strUsername))
+                                            .FirstOrDefaultAsync().Result;
+
+                DatabaseModel mDatabaseModel = new DatabaseModel();
+                mDatabaseModel.id = mData.id;
+                mDatabaseModel.personEmail = mData.personEmail;
+                mDatabaseModel.personPassword = mData.personPassword;
+                mDatabaseModel.personUsername = mData.personUsername;
+                mDatabaseModel.personPhoneNumber = mData.personPhoneNumber;
+
+                return database.UpdateAsync(mDatabaseModel);
+
         }
     }
 }

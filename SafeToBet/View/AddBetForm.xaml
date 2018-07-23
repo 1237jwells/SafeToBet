@@ -14,27 +14,23 @@
             <Entry x:Name="entryBetName" FontSize="Medium" />
             <Label Text="Opponent" FontSize="Medium" />
             <Entry x:Name="entryBetOpponent" FontSize="Medium" Keyboard="Numeric" />           
-            <Label Text="Set Date" FontSize="Medium" Margin="1" />
-            <DatePicker  Format="D"/>
-            <Label Text="End Date" FontSize="Medium" Margin="1" />
-            <DatePicker  Format="D"/>    
+            <Label Text="Date of Bet" FontSize="Medium" Margin="1" />
+            <DatePicker Format="D" x:Name="entryBetDate"  DateSelected="Handle_DateSelected" />  
             <Label Text="Type" FontSize="Medium" />
-            <Picker x:Name="entryBetType" Title="Type of Bet" ItemsSource="{Binding BetsList}}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedBet}" >
-<!--                    
-                <Picker.Items>
-                    
-                    <x:String>Sports</x:String>
-                    <x:String>Food</x:String>
-                    <x:String>Politics</x:String>
-                    <x:String>Family</x:String>
-                   
-                </Picker.Items>
--->                    
+            <Picker x:Name="entryBetType" Title="Type of Bet" SelectedIndexChanged="Handle_Type" >                  
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">                     
+                        <x:String>Sports</x:String>
+                        <x:String>Food</x:String>
+                        <x:String>Politics</x:String>
+                        <x:String>Family</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>>                    
             </Picker>
             <Label Text="Description" FontSize="Medium"/>
             <Editor x:Name="entryBetDescription" FontSize="Medium" Keyboard="Numeric" BackgroundColor="#dedede" AutoSize="TextChanges" HeightRequest="120"/>
           <Label x:Name="Amount"/>
-            <Slider MaximumTrackColor="Gray" MinimumTrackColor="Green" Minimum="0" Maximum="100" Value="10" ValueChanged="Handle_ValueChanged"/>
+            <Slider MaximumTrackColor="Gray" MinimumTrackColor="Green" Minimum="0" Maximum="100" Value="10" ValueChanged="Handle_Amount" />
         </StackLayout>
             </ScrollView>
     </ContentPage.Content>

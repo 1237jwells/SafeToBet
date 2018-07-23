@@ -16,17 +16,15 @@
         </ListView>
         -->
 
-           <Label x:Name="labelBetName" Text="" Grid.Column="0" />               
-                    <Label Text="{Binding MyBet}" FontSize="10" Grid.Row="0" Grid.Column="0" />
-                    <Label x:Name="labelBetDescription" FontSize="10" Grid.Column="1" Grid.Row="0" />
-                    <!--<Label Text="Opponent: " FontSize="10" Grid.Row="1" Grid.Column="0" />-->
-                    <Label x:Name="labelBetOpponent" Text="{}" FontSize="10" Grid.Row="1" Grid.Column="1" /> 
+            <Label x:Name="labelBetName" Text="" FontSize="20"/> 
+            <Label x:Name="labelBetOpponent" Text="" FontSize="10"/>
+            <Label x:Name="labelBetDate" Text="" FontSize="10" />
+            <Label x:Name="labelBetType" Text="" FontSize="10"/>
+            <Label x:Name="labelBetDescription" Text="" FontSize="10"/>
+            <Label x:Name="labelBetAmount" Text="" FontSize="10" />
 
 
-
-
-
-            
+         
              <ListView VerticalOptions="FillAndExpand" HasUnevenRows="true" x:Name="listview" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

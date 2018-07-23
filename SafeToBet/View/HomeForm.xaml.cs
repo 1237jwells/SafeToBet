@@ -12,28 +12,28 @@ namespace SafeToBet
 
 
         String strBetName;
-        //String strBetDate;
-        //String strBetType;
+        String strBetDate;
+        String strBetType;
         String strBetDescription;
         String strBetOpponent;
-        //String strBetAmount;
+        String strBetAmount;
 
         public HomeForm()
         {
             InitializeComponent();
             strBetName = BetSharedPreference.GetBetName;
-            //strBetDate = BetSharedPreference.GetBetDateStart;
-            //strBetType = BetSharedPreference.GetType;
+            strBetDate = BetSharedPreference.GetBetDate;
+            strBetType = BetSharedPreference.GetBetType;
             strBetDescription = BetSharedPreference.GetBetDescription;
             strBetOpponent = BetSharedPreference.GetBetOpponenet;
-            //strBetAmount = BetSharedPreference.GetAmount;
+            strBetAmount = BetSharedPreference.GetBetAmount;
 
             labelBetName.Text = "Name: " + strBetName;
-            //labelBetDate.Text = "Date Start: " + strBetDate;
-            //labelBetType.Text = "Type: " + strBetType;
+            labelBetDate.Text = strBetDate;
+            labelBetType.Text = "Type: " + strBetType;
             labelBetDescription.Text = "Description: " + strBetDescription;
             labelBetOpponent.Text = "Opponent: " + strBetOpponent;
-            //labelBetAmount.Text = "Amount: " + strBetAmount;
+            labelBetAmount.Text = strBetAmount;
 
             String LoggedIn = SharedPreference.GetLoginStatus;
             //strPhoneNumber = SharedPreference.GetPhoneNumber;

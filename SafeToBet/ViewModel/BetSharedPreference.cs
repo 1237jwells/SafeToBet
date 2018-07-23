@@ -11,10 +11,8 @@ namespace SafeToBet.ViewModel
         private const String NameKey = "_name";
         //Creates a String.Empty Default Value
         private static readonly String NameDefault = String.Empty;
-        private const String DateStartKey = "_dateStart";
-        private static readonly String DateStartDefault = String.Empty;
-        private const String DateEndKey = "_dateEnd";
-        private static readonly String DateEndDefault = String.Empty;
+        private const String DateKey = "_date";
+        private static readonly String DateDefault = String.Empty;
         private const String TypeKey = "_type";
         private static readonly String TypeDefault = String.Empty;
         private const String DescriptionKey = "_description";
@@ -38,16 +36,12 @@ namespace SafeToBet.ViewModel
             //Updates Value (Key) from previous value
             set { AppSettings.AddOrUpdateValue(NameKey, value); }
         }
-        public static String GetBetDateStart
+        public static String GetBetDate
         {
-            get { return AppSettings.GetValueOrDefault(DateStartKey, DateStartDefault); }
-            set { AppSettings.AddOrUpdateValue(DateStartKey, value); }
+            get { return AppSettings.GetValueOrDefault(DateKey, DateDefault); }
+            set { AppSettings.AddOrUpdateValue(DateKey, value); }
         }
-        public static String GetBetDateEnd
-        {
-            get { return AppSettings.GetValueOrDefault(DateEndKey, DateEndDefault); }
-            set { AppSettings.AddOrUpdateValue(DateEndKey, value); }
-        }
+       
         public static String GetBetType
         {
             get { return AppSettings.GetValueOrDefault(TypeKey, TypeDefault); }

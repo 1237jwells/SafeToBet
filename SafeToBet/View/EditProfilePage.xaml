@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SafeToBet.View.EditProfilePage">
     <ContentPage.Content>
-
+        <ScrollView>
         <StackLayout Orientation="Vertical" >
 
             <Label Text="Edit Profile" HorizontalOptions="CenterAndExpand" FontSize="25" Margin="10" />
@@ -14,6 +14,6 @@
             <Entry Placeholder="Change Phone #" x:Name="entryPhoneNumber"/> 
             <Button x:Name="btnChangePhoneNumber" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" Text="Change Phone #" Clicked="clickChangePhoneNumber" FontAttributes="Bold" TextColor="#006600"/>
         </StackLayout>
-        
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

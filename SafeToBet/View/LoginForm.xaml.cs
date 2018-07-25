@@ -17,11 +17,20 @@ namespace SafeToBet
         {
             InitializeComponent();
             displayDatabaseData();
+            displayBetDatabaseData();
             //labelUsers = displayDatabaseData();
         }
         async void displayDatabaseData()
         {
             foreach (var item in await App.Database.GetPersonListing())
+            {
+                //Debug.WriteLine("strId >> " + item.id);
+
+            }
+        }
+        async void displayBetDatabaseData()
+        {
+            foreach (var item in await App.DatabaseBet.GetBetsListing())
             {
                 //Debug.WriteLine("strId >> " + item.id);
 

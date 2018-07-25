@@ -4,6 +4,7 @@
         <ToolbarItem Text="Back" Clicked="Back_Click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White" Margin="20,40,20,10">
                 <Label Text="Register For SafeToBet!" Margin="25" FontSize="40" HorizontalOptions="CenterAndExpand" XAlign="Center"/>
                 <Label Text="Username" />
@@ -18,8 +19,8 @@
                 <Entry x:Name="entryConfirmPassword"  Text="" IsPassword="true" Placeholder="Re-Enter Password" Margin="10,10,10,20" />
                 <Button Text="Back" FontAttributes="Bold" Clicked="Back_Click" TextColor="#006600"/>
                 <Button Text="Sign Up" FontAttributes="Bold" Clicked="SignupClick" TextColor="#006600"/>
-            <Button Text=" COOL!"/>
             </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
 

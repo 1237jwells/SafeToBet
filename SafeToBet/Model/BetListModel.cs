@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace SafeToBet.Model
@@ -13,5 +14,12 @@ namespace SafeToBet.Model
         public string BetDescription { get; set; }
         public string BetOpponent { get; set; }
         public string BetAmount { get; set; }
+        public List<BetListModel> Items = new List<BetListModel>();
+
+        public BetListModel()
+        {
+            
+        }
+
     }
 }

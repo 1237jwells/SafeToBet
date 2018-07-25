@@ -13,6 +13,7 @@ namespace SafeToBet.Classes
         public static String WRONG = "Something went wrong, re-start";
         public static String CREATE_ACCOUNT = "Do you want to create this account?";
         public static String DELETE_ACCOUNT = "Are you sure you want to delete your account?";
+        public static String DELETE_BET = "Are you sure you want to delete your bet?";
         public static String LOGIN_SUCCESS = "You are logged in successfully";
         public static String SIGNUP_SUCCESS = "You are signed in successfully";
         public static String LOGIN_FAILURE = "Your Username or password is incorrect";

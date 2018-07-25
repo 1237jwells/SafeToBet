@@ -1,18 +1,14 @@
 ﻿using System;
-using SafeToBet.Classes;
-using Xamarin.Forms;
-using SafeToBet.Data;
-using SafeToBet.ViewModel;
-using SafeToBet.Model;
 using System.Collections.Generic;
+using SafeToBet.Classes;
+using SafeToBet.Model;
+using SafeToBet.ViewModel;
+using Xamarin.Forms;
 
 namespace SafeToBet.View
 {
-    public partial class AddBetForm : ContentPage
+    public partial class EditBetForm : ContentPage
     {
-        //List<BetListModel> listItems = null;
-        //BetList viewModel;
-        //Strings start at nothing
         //int intBetId;
         String strBetName = "";
         String strBetDate = "";
@@ -21,7 +17,7 @@ namespace SafeToBet.View
         String strBetOpponent = "";
         String strBetAmount = "";
 
-        public AddBetForm()
+        public EditBetForm()
         {
             InitializeComponent();
             //Amount.Text = String.Format("Bet Amount: {0:C0}", e.NewValue);
@@ -51,9 +47,14 @@ namespace SafeToBet.View
             }
         }
 
+        void Back_Click(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
         void Save_Click(object sender, EventArgs e)
         {
-            
+
 
             //Xaml text entryName.Text is now == string
             strBetName = entryBetName.Text;
@@ -83,13 +84,13 @@ namespace SafeToBet.View
             //    BetDescription = strBetDescription,
             //    BetAmount = strBetAmount
             //});
-                  
+
             //Saves as a new Databse Result
             int intSaveBetResult = App.DatabaseBet.SaveBetIntoDatabase(mBetList);
             openActionDialog(intSaveBetResult);
         }
 
-        async private void openActionDialog(int intResult)
+        protected async void openActionDialog(int intResult)
         {
             if (intResult == 1)
             {

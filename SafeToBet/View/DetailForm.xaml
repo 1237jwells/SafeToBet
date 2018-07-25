@@ -4,6 +4,7 @@
     <MasterDetailPage.Master>
         <ContentPage Title="SafeToBet" >
             <ContentPage.Content>
+                <ScrollView>
                 <StackLayout Orientation="Vertical" Padding="10" >
                     <Label Text="" x:Name="labelUsername"  FontSize="15" HorizontalTextAlignment="Center" Margin="10,10,10,25"/>
                     <Label Text="SafeToBet Guide" FontSize="23" Margin="10,10,10,10" HorizontalOptions="CenterAndExpand"/>
@@ -16,6 +17,7 @@
                     <Button Text="Logout" FontAttributes="Bold"  Margin="10,10,10,10" Clicked="openLogout" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
                     <Button Text="Delete Account" FontAttributes="Bold"  Margin="10,10,10,10" Clicked="deleteAccount" HorizontalOptions="CenterAndExpand" TextColor="#006600"/>
                 </StackLayout>
+                    </ScrollView>
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Master>

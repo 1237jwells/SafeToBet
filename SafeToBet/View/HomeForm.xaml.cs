@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using SafeToBet.ViewModel;
 using SafeToBet.Classes;
+using SafeToBet.Model;
 using Xamarin.Forms;
+using SafeToBet.View;
 
 namespace SafeToBet
 {
     public partial class HomeForm : ContentPage
     {
-        //private String strPhoneNumber;
-        //private String strName;
-
-
+        public List<BetListModel> listItems = null;
         String strBetName;
         String strBetDate;
         String strBetType;
@@ -28,16 +32,27 @@ namespace SafeToBet
             strBetOpponent = BetSharedPreference.GetBetOpponenet;
             strBetAmount = BetSharedPreference.GetBetAmount;
 
-            labelBetName.Text = "Name: " + strBetName;
-            labelBetDate.Text = strBetDate;
-            labelBetType.Text = "Type: " + strBetType;
-            labelBetDescription.Text = "Description: " + strBetDescription;
-            labelBetOpponent.Text = "Opponent: " + strBetOpponent;
-            labelBetAmount.Text = strBetAmount;
+            //labelBetName.Text = "Name: " + strBetName;
+            //labelBetDate.Text = "Date of Bet: " + strBetDate;
+            //labelBetType.Text = "Type: " + strBetType;
+            //labelBetDescription.Text = "Description: " + strBetDescription;
+            //labelBetOpponent.Text = "Opponent: " + strBetOpponent;
+            //labelBetAmount.Text = "Bet Amount: " + strBetAmount;
+
+            listItems = new List<BetListModel>();
+            listItems.Add(new BetListModel()
+            {
+                BetName = strBetName,
+                BetOpponent = strBetOpponent,
+                BetDate = strBetDate,
+                BetType = strBetType,
+                BetDescription = strBetDescription,
+                BetAmount = strBetAmount
+            });
+
+            items.ItemsSource = listItems;
 
             String LoggedIn = SharedPreference.GetLoginStatus;
-            //strPhoneNumber = SharedPreference.GetPhoneNumber;
-
             if (LoggedIn.Equals("false"))
             {
                 startLoginScreen();
@@ -51,9 +66,14 @@ namespace SafeToBet
         {
             await DisplayAlert("", strMessage, "OK");
         }
-        private void OnDelete()
+        async void BetTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
+            await Navigation.PushModalAsync(new BetDisplayForm());       
+        }
 
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

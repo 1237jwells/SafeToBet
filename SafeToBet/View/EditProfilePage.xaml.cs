@@ -8,7 +8,6 @@ namespace SafeToBet.View
 {
     public partial class EditProfilePage : ContentPage
     {
-        String strStatus;
         String strUsername;
         String strOldPassword;
         String strEmail;

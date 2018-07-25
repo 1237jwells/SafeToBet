@@ -36,9 +36,21 @@ namespace SafeToBet.Data
             }
         }
         //This functio will delete account from database
-        public Task<int> deleteBet(BetListModel mBetList)
+        public Task<int> deleteBet(String strBetName)
         {
-            return database.DeleteAsync(mBetList);
+            var bData = database.Table<BetListModel>().Where(i => i.BetName.Equals(strBetName))
+                               .FirstOrDefaultAsync().Result;
+            
+            BetListModel bDatabaseModel = new BetListModel();
+            bDatabaseModel.BetId = bData.BetId;
+            bDatabaseModel.BetDate = bData.BetDate;
+            bDatabaseModel.BetName = bData.BetName;
+            bDatabaseModel.BetType = bData.BetType;
+            bDatabaseModel.BetAmount = bData.BetAmount;
+            bDatabaseModel.BetOpponent = bData.BetOpponent;
+            bDatabaseModel.BetDescription = bData.BetDescription;
+
+            return database.DeleteAsync(bDatabaseModel);
         }
         //This function will UPDATE data into database.
         public Task<int> UpdateBetIntoDatabase(BetListModel mBetList)

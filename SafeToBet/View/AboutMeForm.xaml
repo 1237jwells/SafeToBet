@@ -4,9 +4,11 @@
         <ToolbarItem Text="Save" Clicked="Save_Click" />
     </ContentPage.ToolbarItems>
     <ContentView>
+        <ScrollView>
         <StackLayout Margin="15">
         <Label Text="What's New About You?" XAlign="Center" FontSize="30"/>
         <Editor Text="About U?" Keyboard="Text" MaxLength="280" Margin="10" Completed="EditorCompleted" TextChanged="EditorTextChanged" HeightRequest="400" />
         </StackLayout>
+            </ScrollView>
     </ContentView>
 </ContentPage>

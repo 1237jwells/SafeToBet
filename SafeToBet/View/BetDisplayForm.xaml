@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SafeToBet.View.BetDisplayForm">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White" Margin="20,40,20,10" >
+            
+            <Label x:Name="labelBetName"        Text="" FontSize="30" Margin="10"/> 
+            <Label x:Name="labelBetOpponent"    Text="" FontSize="30" Margin="10"/>
+            <Label x:Name="labelBetDate"        Text="" FontSize="30" Margin="10"/>
+            <Label x:Name="labelBetType"        Text="" FontSize="30" Margin="10"/>
+            <Label x:Name="labelBetDescription" Text="" FontSize="30" Margin="10"/>
+            <Label x:Name="labelBetAmount"      Text="" FontSize="30" Margin="10"/>
+
+            <Button Text="Back" Clicked="Back_Click"/>
+            <Button Text="Edit" Clicked="EditBet_Click"/>
+            <Button Text="Delete" Clicked="Delete_Click" />
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

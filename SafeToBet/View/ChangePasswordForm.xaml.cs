@@ -7,7 +7,7 @@ namespace SafeToBet
 {
     public partial class ChangePasswordForm : ContentPage
     {
-        String strStatus;
+        //String strStatus;
         String strUsername;
         String strOldPassword;
         String strNewPassword;
